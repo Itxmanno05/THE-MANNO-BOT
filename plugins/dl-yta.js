@@ -25,7 +25,7 @@ let handler = async (m, { conn, text, args, isPrems, isOwner, usedPrefix, comman
 
     m.react(done); 
   } catch {
-    await m.reply(`❎ Error: Could not download the audio.`)
+    await m.reply(`❎ Error: 🄼-BY.CYBER_WARRIOR.`)
   }
 };
 
