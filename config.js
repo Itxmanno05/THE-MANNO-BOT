@@ -12,17 +12,17 @@ import moment from "moment-timezone"
 
 
 global.owner = [
-  ["923140053156", "𝐂𝐘𝐁𝐄𝐑_𝐖𝐀𝐑𝐑𝐈𝐎𝐑", false],
+  ["923140053156", "𝐂𝐘𝐁𝐄𝐑_𝐖𝐀𝐑𝐑𝐈𝐎𝐑", true],
   [''], 
   [''] 
 ]
 //💌------------------------------------------💌
 
 
-//💌global.pairingNumber = "" //put your bot number here💌
+//💌global.pairingNumber = "923140053156" //put your bot number here💌
 global.mods = [923140053156'] 
-global.prems = ['']
-global.allowed = ['']
+global.prems = ['923140053156']
+global.allowed = ['923140053156']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
 global.keysxteammm = ['29d4b59a4aa687ca', '5LTV57azwaid7dXfz5fzJu', 'cb15ed422c71a2fb', '5bd33b276d41d6b4', 'HIRO', 'kurrxd09', 'ebb6251cc00f9c63']
@@ -114,7 +114,7 @@ global.princegpt = [gpt1, gpt2, gpt3, gpt4, gpt5, gpt6]
 
 
 // Moderator 
-global.developer = 'https://api.whatsapp.com/send?phone=+923140053156' //contact
+global.developer = 'https://api.whatsapp.com/923140053156' //contact
 //💌------------------------------------------💌
 
 
@@ -127,7 +127,7 @@ global.author = '𝐂𝐘𝐁𝐄𝐑_𝐖𝐀𝐑𝐑𝐈𝐎𝐑♥️'
 global.princeig = 'https://www.instagram.com/usman42677?igsh=aDk2a2p5NG1yOWU0' 
 global.princegp = 'https://api.whatsapp.com/send?phone=+923140053156'
 global.menuvid = 'https://telegra.ph/file/0c694cc7af16cab21f78b.mp4'
-global.Princesc = 'https://github.com/PRINCE-GDS/THE-PRINCE-BOT' 
+global.Princesc = 'https://github.com/mano125/THE-PRINCE-BOT' 
 global.princeyt = 'https://youtube.com/'
 global.Princelog = 'https://telegra.ph/file/0c694cc7af16cab21f78b.mp4'
 global.thumb = fs.readFileSync('./Assets/Prince.png')
@@ -136,9 +136,9 @@ global.thumb = fs.readFileSync('./Assets/Prince.png')
 
 
 //Reactions
-global.wait = '*♻️ _𝙶𝙴𝚃𝚃𝙸𝙽𝙶 𝚈𝙾𝚄𝚁 𝙵𝙸𝙻𝙴 𝚆𝙰𝙸𝚃..._*\n*▰▰▰▱▱▱▱▱*'
+global.wait = '*, ⏳_𝙶𝙴𝚃𝚃𝙸𝙽𝙶 𝚈𝙾𝚄𝚁 𝙵𝙸𝙻𝙴 𝚆𝙰𝙸𝚃..._*\n*▰▰▰▱▱▱▱▱*'
 global.imgs = '*🖼️ _𝙶𝙴𝚃𝚃𝙸𝙽𝙶 𝚈𝙾𝚄𝚁 ɪᴍᴀɢᴇs 𝚆𝙰𝙸𝚃..._*\n*▰▰▰▱▱▱▱▱*'
-global.rwait = '♻️'
+global.rwait = '⏳'
 global.dmoji = '🤭'
 global.done = '✅'
 global.error = '❌' 
