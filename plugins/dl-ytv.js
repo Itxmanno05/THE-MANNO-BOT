@@ -34,23 +34,23 @@ const handler = async (m, {conn, args, usedPrefix, command}) => {
       }
     }
   }
-  const { key } = await m.reply(`*♻️Getting your video..._*`);
+  const { key } = await m.reply(`*⏳Getting your video..._*`);
   try {
     const formats = await bestFormat(youtubeLink, 'video');
     const buff = await getBuffer(formats.url);
     const yt_1 = await youtubedl(youtubeLink).catch(async (_) => await youtubedlv2(youtubeLink));
-    const ttl_1 = `${yt_1?.title ? yt_1.title : 'Downloaded video'}`;
+    const ttl_1 = `${yt_1?.title ? yt_1.title : '🄼 GRANTED-BY.CYBER_WARRIOR'}`;
     const fileSizeInBytes = buff.byteLength;
     const fileSizeInKB = fileSizeInBytes / 1024;
     const fileSizeInMB = fileSizeInKB / 1024;
     const roundedFileSizeInMB = fileSizeInMB.toFixed(2);
    if (fileSizeInMB > 100) {
     await conn.sendMessage(m.chat, {document: buff, caption: `*🪩Title:* ${ttl_1}\n*🪩Size:* ${roundedFileSizeInMB} MB`, fileName: ttl_1 + '.mp4', mimetype: 'video/mp4'}, {quoted: m});
-    await conn.sendMessage(m.chat, {text: `*[ ✅ ] Video downloaded and sent successfully🛡️.*\n\n*—◉ It was sent in document format due to the weight of the video ${roundedFileSizeInMB} MB and exceeds the limit set by WhatsApp .*\n*◉ Titulo:* ${ttl_1}`, edit: key}, {quoted: m});
+    await conn.sendMessage(m.chat, {text: `*[ ✅ ] Video 🄼 GRANTED-BY.CYBER_WARRIOR🛡️.*\n\n*—◉ It was sent in document format due to the weight of the video ${roundedFileSizeInMB} MB and exceeds the limit set by WhatsApp .*\n*◉ Titulo:* ${ttl_1}`, edit: key}, {quoted: m});
     enviando = false
    } else {
     await conn.sendMessage(m.chat, {video: buff, caption: `*🪩Title:* ${ttl_1}\n*🪩Size:* ${roundedFileSizeInMB} MB`, fileName: ttl_1 + '.mp4', mimetype: 'video/mp4'}, {quoted: m});
-    await conn.sendMessage(m.chat, {text: `*[ ✅ ] Video successfully downloaded.*`, edit: key}, {quoted: m});
+    await conn.sendMessage(m.chat, {text: `*[ ✅ ] Video 🄼 GRANTED-BY.CYBER_WARRIOR*`, edit: key}, {quoted: m});
     enviando = false   
    }
  } catch (ee) {
@@ -71,7 +71,7 @@ const handler = async (m, {conn, args, usedPrefix, command}) => {
     try {
       const mediaa = await ytMp4(youtubeLink);
       await conn.sendMessage(m.chat, {video: {url: mediaa.result}, fileName: `error.mp4`, caption: `_𝐓𝐡𝐞 Prince - 𝐁𝐨𝐭_`, thumbnail: mediaa.thumb, mimetype: 'video/mp4'}, {quoted: m});
-      await conn.sendMessage(m.chat, {text: '*[ ✅ ] Video successfully downloaded.*', edit: key}, {quoted: m});
+      await conn.sendMessage(m.chat, {text: '*[ ✅ ] Video 🄼 GRANTED-BY.CYBER_WARRIOR.*', edit: key}, {quoted: m});
       enviando = false
     } catch {
       try {
