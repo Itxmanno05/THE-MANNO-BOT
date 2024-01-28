@@ -1,170 +1,172 @@
-import fetch from 'node-fetch';
-import axios from 'axios';
-import yts from 'youtube-yts';
-import {youtubedl, youtubedlv2} from '@bochilteam/scraper';
-import ytdl from 'youtubedl-core';
-import {bestFormat, getUrlDl} from '../lib/y2dl.js';
-import YTDL from "../lib/ytdll.js";
-import fs from "fs";
-let limit1 = 100;
-let limit2 = 400;
-let limit_a1 = 50;
-let limit_a2 = 400;
-const handler = async (m, {conn, command, args, text, usedPrefix}) => {
-  if (!args[0] && m.quoted && m.quoted.text) {
+const { zokou } = require("../framework/zokou");
+const yts = require('yt-search');
+const ytdl = require('ytdl-core');
+const fs = require('fs');
+const yt=require("../framework/dl/ytdl-core.js")
+const ffmpeg = require("fluent-ffmpeg");
+const yts1 = require("youtube-yts");
+//var fs =require("fs-extra")
+
+zokou({
+  nomCom: "song",
+  categorie: "Recherche",
+  reaction: "💿"
+}, async (origineMessage, zk, commandeOptions) => {
+  const { ms, repondre, arg } = commandeOptions;
+     
+  if (!arg[0]) {
+    repondre("Veuillez entrer un terme de recherche s'il vous plaît.");
+    return;
   }
-  if (!args[0] && !m.quoted) throw `🅔🅖   *${usedPrefix}${command}*  𝙰𝚢𝚊𝚊 𝚑𝚊𝚒 𝚋𝚞𝚕𝚊𝚠𝚊 𝙽𝚊𝚊𝚝...`;
 
   try {
-    m.react("📥")
-    const yt_play = await search(args.join(' '));
-    let additionalText = '';
-    if (command === 'playy') {
-      additionalText = 'audio 🔊';
-    } else if (command === 'video') {
-      additionalText = 'video 🎥';
+    let topo = arg.join(" ")
+    const search = await yts(topo);
+    const videos = search.videos;
+
+    if (videos && videos.length > 0 && videos[0]) {
+      const urlElement = videos[0].url;
+          
+       let infoMess = {
+          image: {url : videos[0]. thumbnail},
+         caption : `\n*nom de l'audio :* _${videos[0].title}_
+
+*Durée :* _${videos[0].timestamp}_
+
+*Lien :* _${videos[0].url}_
+
+
+_*En cours de téléchargement...*_\n\n`
+       }
+
+      
+
+      
+
+      
+
+      
+
+      
+//
+
+    /*  let buffer = Buffer.from([]);
+    for await (const elm of media) {
+      buffer = Buffer.concat([buffer, elm]);
+    }*/
+
+//
+
+
+// console.log("le son "+urlElement)
+
+/* yt.mp3(urlElement).then((fichier)=>{
+   const entFic=fichier.path;
+   const sortFic=entFic+".opus";
+   ffmpeg.format("opus") .on("error", (err) => {
+              console.error( err);
+            }).on('end',async()=>{
+
+                     zk.sendMessage(origineMessage, { audio: { url:fs.readFileSync(sortFic)/*"./audio.mp3"*//*},mimetype:'audio/mp4' }, { quoted: ms,ptt: true }) ;
+            }).save(sortFic)
+ })*/
+     // console.log("le son "+urlElement)*/
+      
+       zk.sendMessage(origineMessage,infoMess,{quoted:ms}) ;
+      // Obtenir le flux audio de la vidéo
+      const audioStream = ytdl(urlElement, { filter: 'audioonly', quality: 'highestaudio' });
+
+      // Nom du fichier local pour sauvegarder le fichier audio
+      const filename = 'audio.mp3';
+
+      // Écrire le flux audio dans un fichier local
+      const fileStream = fs.createWriteStream(filename);
+      audioStream.pipe(fileStream);
+
+      fileStream.on('finish', () => {
+        // Envoi du fichier audio en utilisant l'URL du fichier local
+      
+
+     zk.sendMessage(origineMessage, { audio: { url:"audio.mp3"},mimetype:'audio/mp4' }, { quoted: ms ,ptt: false });
+        console.log("Envoi du fichier audio terminé !");
+
+     
+      });
+
+      fileStream.on('error', (error) => {
+        console.error('Erreur lors de l\'écriture du fichier audio :', error);
+        repondre('Une erreur est survenue lors de l\'écriture du fichier audio.');
+      });
+    } else {
+      repondre('Aucune vidéo trouvée.');
     }
-    const texto1 = `╭━━⊱🌟 *𝐂𝐘𝐁𝐄𝐑_𝐖𝐀𝐑𝐑𝐈𝐎𝐑 𝐘𝐓* 🌟⊱━━╮
+  } catch (error) {
+    console.error('Erreur lors de la recherche ou du téléchargement de la vidéo :', error);
     
-  *🪩 Channel: ${yt_play[0].author.name}*
-  *📃 Title: ${yt_play[0].title}*
-  *⏰ Duration: ${secondString(yt_play[0].duration.seconds)}*
-  *🎴 Views: ${yt_play[0].views}*
-  *🔗 Link: ${yt_play[0].url}*
-*⊱─━⊱༻𝐂𝐘𝐁𝐄𝐑_𝐖𝐀𝐑𝐑𝐈𝐎𝐑 𝐁𝐎𝐓༺⊰━─⊰*`;
-    conn.sendMessage(m.chat, {image: {url: yt_play[0].thumbnail}, caption: texto1}, {quoted: m});
-    if (command == 'play') {
-    try {
-    m.react("🎧")    
-    const q = '160kbps';
-    const v = yt_play[0].url;
-    const yt = await youtubedl(v).catch(async (_) => await youtubedlv2(v));
-    const dl_url = await yt.audio[q].download();
-    const ttl = await yt.title;
-    const size_Api = await yt?.size;
-    const sizeApi = size_Api?.replace('MB', '')?.replace('GB', '')?.replace('KB', '')   
-    const ses = await getBuffer(dl_url)
-    const fileSizeInBytes = ses.byteLength;
-    const fileSizeInKB = fileSizeInBytes / 1024;
-    const fileSizeInMB = fileSizeInKB / 500;
-    const size = fileSizeInMB.toFixed(2);    
-    if (size >= limit_a2) {  
-    await conn.sendMessage(m.chat, {text: `${dl_url}*`}, {quoted: m});
-    return;    
-    }     
-    if (size >= limit_a1 && size <= limit_a2) {  
-    await conn.sendMessage(m.chat, {document: ses, mimetype: 'audio/mpeg', fileName: ttl + `.mp3`}, {quoted: m});
-   return;
-    } else {
-      m.react('✅')
-    await conn.sendMessage(m.chat, {audio: ses, mimetype: 'audio/mpeg', fileName: ttl + `.mp3`}, {quoted: m}); 
-    return;    
-    }} catch {
-    try {
-    let info = await ytdl.getInfo(yt_play[0].videoId);
-    let format = ytdl.chooseFormat(info.formats, { quality: 'highestaudio' });
-    let buff = ytdl.downloadFromInfo(info, { format: format });
-    let bufs = []
-        buff.on('data', chunk => { bufs.push(chunk) })
-        buff.on('end', async () => {
-    let buff = Buffer.concat(bufs)
-    conn.sendMessage(m.chat, {audio: buff, fileName: yt_play[0].title + '.mp3', mimetype: 'audio/mpeg'}, {quoted: m});
-    })} catch {
-    await YTDL.mp3(yt_play[0].url).then(async (s) => {
-    await conn.sendMessage(m.chat, {audio: fs.readFileSync(s.path), mimetype: "audio/mpeg", fileName: `${s.meta.title || "-"}.mp3`,}, {quoted: m});
-    await fs.unlinkSync(s.path)});
+    repondre('Une erreur est survenue lors de la recherche ou du téléchargement de la vidéo.');
+  }
+});
 
+  
+
+zokou({
+  nomCom: "video",
+  categorie: "Recherche",
+  reaction: "🎥"
+}, async (origineMessage, zk, commandeOptions) => {
+  const { arg, ms, repondre } = commandeOptions;
+
+  if (!arg[0]) {
+    repondre("Veillez entrer un terme de recherche s'il vous plaît");
+    return;
+  }
+
+  const topo = arg.join(" ");
+  try {
+    const search = await yts(topo);
+    const videos = search.videos;
+
+    if (videos && videos.length > 0 && videos[0]) {
+      const Element = videos[0];
+
+      let InfoMess = {
+        image: { url: videos[0].thumbnail },
+        caption: `*nom de la vidéo :* _${Element.title}_
+*Durée :* _${Element.timestamp}_
+*Lien :* _${Element.url}_
+_*En cours de téléchargement...*_\n\n`
+      };
+
+      zk.sendMessage(origineMessage, InfoMess, { quoted: ms });
+
+      // Obtenir les informations de la vidéo à partir du lien YouTube
+      const videoInfo = await ytdl.getInfo(Element.url);
+      // Format vidéo avec la meilleure qualité disponible
+      const format = ytdl.chooseFormat(videoInfo.formats, { quality: '18' });
+      // Télécharger la vidéo
+      const videoStream = ytdl.downloadFromInfo(videoInfo, { format });
+
+      // Nom du fichier local pour sauvegarder la vidéo
+      const filename = 'video.mp4';
+
+      // Écrire le flux vidéo dans un fichier local
+      const fileStream = fs.createWriteStream(filename);
+      videoStream.pipe(fileStream);
+
+      fileStream.on('finish', () => {
+        // Envoi du fichier vidéo en utilisant l'URL du fichier local
+        zk.sendMessage(origineMessage, { video: { url :"./video.mp4"} , caption: "*Zokou-Md", gifPlayback: false }, { quoted: ms });
+      });
+
+      fileStream.on('error', (error) => {
+        console.error('Erreur lors de l\'écriture du fichier vidéo :', error);
+        repondre('Une erreur est survenue lors de l\'écriture du fichier vidéo.');
+      });
+    } else {
+      repondre('Aucune vidéo trouvée.');
     }
+  } catch (error) {
+    console.error('Erreur lors de la recherche ou du téléchargement de la vidéo :', error);
+    repondre('Une erreur est survenue lors de la recherche ou du téléchargement de la vidéo.');
   }
-}
-    if (command == 'video') {
-    try {
-      m.react("📹")
-    const qu = '360';
-    const q = qu + 'p';
-    const v = yt_play[0].url;
-    const yt = await youtubedl(v).catch(async (_) => await youtubedlv2(v));
-    const dl_url = await yt.video[q].download();
-    const ttl = await yt.title;
-    const size_Api = await yt?.size;
-    const sizeApi = size_Api?.replace('MB', '')?.replace('GB', '')?.replace('KB', '')   
-    const ses = await getBuffer(dl_url)
-    const fileSizeInBytes = ses.byteLength;
-    const fileSizeInKB = fileSizeInBytes / 1024;
-    const fileSizeInMB = fileSizeInKB / 500;
-    const size = fileSizeInMB.toFixed(2);    
-    if (size >= limit2) {  
-    await conn.sendMessage(m.chat, {text: `${dl_url}`}, {quoted: m});
-    return;    
-    }     
-    if (size >= limit1 && size <= limit2) {  
-    await conn.sendMessage(m.chat, {document: ses, mimetype: 'video/mp4', fileName: ttl + `.mp4`}, {quoted: m});   
-    return;
-    } else {
-      m.react(done)
-    await conn.sendMessage(m.chat, {video: ses, mimetype: 'video/mp4', fileName: ttl + `.mp4`}, {quoted: m});
-    return;    
-    }} catch {
-    const caption = 'Here is your video'
-    const formats = await bestFormat(yt_play[0].url, 'video');
-    const buff = await getBuffer(formats.url);
-    const ttl_1 = `${yt_play[0].title ? yt_play[0].title : 'Tu_video_descargado'}`;
-    const fileSizeInBytes = buff.byteLength;
-    const fileSizeInKB = fileSizeInBytes / 1024;
-    const fileSizeInMB = fileSizeInKB / 1024;
-    const roundedFileSizeInMB = fileSizeInMB.toFixed(2);
-    await conn.sendMessage(m.chat, {video: buff, fileName: ttl_1 + '.mp4', mimetype: 'video/mp4'}, {quoted: m});
-
-    }      
-  }
-} catch (error) {
-    console.log(error)
-    return;
-  }
-};
-handler.help = ['playy', 'video'].map((v) => v + ' < query >');
-handler.tags = ['downloader'];
-handler.command = ['playy', 'video'];
-export default handler;
-
-async function search(query, options = {}) {
-  const search = await yts.search({query, hl: 'es', gl: 'ES', ...options});
-  return search.videos;
-}
-
-function MilesNumber(number) {
-  const exp = /(\d)(?=(\d{3})+(?!\d))/g;
-  const rep = '$1.';
-  const arr = number.toString().split('.');
-  arr[0] = arr[0].replace(exp, rep);
-  return arr[1] ? arr.join('.') : arr[0];
-}
-
-function secondString(seconds) {
-  seconds = Number(seconds);
-  const d = Math.floor(seconds / (3600 * 24));
-  const h = Math.floor((seconds % (3600 * 24)) / 3600);
-  const m = Math.floor((seconds % 3600) / 60);
-  const s = Math.floor(seconds % 60);
-  const dDisplay = d > 0 ? d + (d == 1 ? ' giorno, ' : ' giorni, ') : '';
-  const hDisplay = h > 0 ? h + (h == 1 ? ' hour, ' : ' ore, ') : '';
-  const mDisplay = m > 0 ? m + (m == 1 ? ' minuto, ' : ' minutes, ') : '';
-  const sDisplay = s > 0 ? s + (s == 1 ? ' secondo' : ' seconds') : '';
-  return dDisplay + hDisplay + mDisplay + sDisplay;
-}
-
-function bytesToSize(bytes) {
-  return new Promise((resolve, reject) => {
-    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-    if (bytes === 0) return 'n/a';
-    const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10);
-    if (i === 0) resolve(`${bytes} ${sizes[i]}`);
-    resolve(`${(bytes / (1024 ** i)).toFixed(1)} ${sizes[i]}`);
-  });
-}
-
-const getBuffer = async (url, options) => {
-    options ? options : {};
-    const res = await axios({method: 'get', url, headers: {'DNT': 1, 'Upgrade-Insecure-Request': 1,}, ...options, responseType: 'arraybuffer'});
-    return res.data;
-};
+});
