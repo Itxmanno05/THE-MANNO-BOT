@@ -7,23 +7,23 @@
 
 
 <p align="center">
-<a href="https://github.com/𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-GDS/𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹 𝑩𝑶𝑻"><img title="Author" src="https://img.shields.io/badge/THE PRINCE BOT-black?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/CYBER_WARRIOR-BOT-GDS/CYBER_WARRIOR-BOT"><img title="Author" src="https://img.shields.io/badge/THE CYBER_WARRIOR BOT-black?style=for-the-badge&logo=github"></a>
 <p/>
 
 <p align="center">
-<a href="https://github.com/𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-GDS?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-GDS?label=Followers&style=social"></a>
-<a href="https://github.com/𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-GDS/𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-𝑩𝑶𝑻/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-GDS/THE-𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-BOT?&style=social"></a>
-<a href="https://github.com/𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-GDS/THE-𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-BOT/network/members"><img title="Fork" src="https://img.shields.io/github/forks/𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-GDS/THE-𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-BOT?style=social"></a>
-<a href="https://github.com/𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-GDS/THE-𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-BOT/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-GDS/THE-𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-BOT?label=Watching&style=social"></a>
+<a href="https://github.com/CYBER_WARRIOR-BOT-GDS?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/CYBER_WARRIOR-BOT-GDS?label=Followers&style=social"></a>
+<a href="https://github.com/CYBER_WARRIOR-GDS/CYBER_WARRIOR/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/CYBER_WARRIOR-GDS/THE-CYBER_WARRIOR-BOT?&style=social"></a>
+<a href="https://github.com/CYBER_WARRIOR-GDS/THE-CYBER_WARRIOR-BOT/network/members"><img title="Fork" src="https://img.shields.io/github/forks/CYBER_WARRIOR-GDS/THE-CYBER_WARRIOR-BOT?style=social"></a>
+<a href="https://github.com/CYBER_WARRIOR-GDS/THE-CYBER_WARRIOR-BOT/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/CYBER_WARRIOR-GDS/THE-CYBER_WARRIOR-BOT?label=Watching&style=social"></a>
 </p>
  
 <h1 align="center">𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹 𝑩𝑶𝑻</h1>
 
-#### 🪩 To Change the owner number click here [CHANGE ONWER](https://github.com/𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-GDS/THE-𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹-BOT/blob/main/plugins/main-creator.js#L7)🪩
+#### 🪩 To Change the owner number click here [CHANGE ONWER](https://github.com/CYBER_WARRIOR-GDS/THE-CYBER_WARRIOR-BOT/blob/main/plugins/main-creator.js#L7)🪩
 
 <h2 align="left">ＳＥＳＳＩＯＮ ＩＤ (ＰＡＩＲ ＣＯＤＥ)</h2>
 <p align="left">
-<a href="https://replit.com/@iycwwwuaaipgfjs/Prince-PairCode?v=1"><img height= "40" title="Author" src="https://img.shields.io/badge/SESSION ID-black?style=for-the-badge&logo=replit"></a>
+<a href="https://replit.com/@iycwwwuaaipgfjs/CYBER_WARRIOR-PairCode?v=1"><img height= "40" title="Author" src="https://img.shields.io/badge/SESSION ID-black?style=for-the-badge&logo=replit"></a>
 <p/>
 
 ****
@@ -43,7 +43,7 @@
        <p align="left"><a href="https://signup.heroku.com"> <img src="https://img.shields.io/badge/heroku%20Account-purple?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 #### 2. Deploy Now.
-   <p align="left"><a href="https://heroku.com/deploy?template=https://github.com/PRINCE-GDS/THE-PRINCE-BOT"> <img src="https://img.shields.io/badge/Heroku%20Deploy-purple?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+   <p align="left"><a href="https://heroku.com/deploy?template=https://github.com/CYBER_WARRIOR-GDS/THE-PRINCE-BOT"> <img src="https://img.shields.io/badge/Heroku%20Deploy-purple?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 
 
