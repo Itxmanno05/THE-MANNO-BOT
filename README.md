@@ -17,7 +17,7 @@
 <a href="https://github.com/PRINCE-GDS/THE-PRINCE-BOT/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/PRINCE-GDS/THE-PRINCE-BOT?label=Watching&style=social"></a>
 </p>
  
-<h1 align="center">🛡️ᑭᖇIᑎᑕᕮ ᗷOT ᗰᗪ🛡️</h1>
+<h1 align="center">𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹 𝑩𝑶𝑻</h1>
 
 #### 🪩 To Change the owner number click here [CHANGE ONWER](https://github.com/PRINCE-GDS/THE-PRINCE-BOT/blob/main/plugins/main-creator.js#L7)🪩
 
@@ -73,7 +73,7 @@
 
 
    <p align="left">
-      <a href="https://chat.whatsapp.com/Jo5bmHMAlZpEIp75mKbwxP"><img height= "40" length= "10" title="Author" src="https://img.shields.io/badge/Support Group-25D366?style=for-the-badge&logo=whatsApp&logoColor=white"></a>
+      <a href="[https://chat.whatsapp.com/Jo5bmHMAlZpEIp75mKbwxP](https://chat.whatsapp.com/JuG5xKdjcQ5HJMbTweh1Zm)"><img height= "40" length= "10" title="Author" src="https://img.shields.io/badge/Support Group-25D366?style=for-the-badge&logo=whatsApp&logoColor=white"></a>
      <p/>
 
 
@@ -98,9 +98,9 @@ $ npm start
 3. Scan the QR code from the second device. (Go to WhatsApp > Linked Devices > Link a Device) 
 ---------
 
-<h2 align="left">All Credits To Guru bruh</h2>
+<h2 align="left">All Credits To 𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹</h2>
 
-<a href="https://github.com/Guru322"><img src="https://github.com/Guru322.png" width="70" height="70" alt="Guru322"/></a>
+<a href="https://github.com/Guru322"><img src="https://telegra.ph/file/173eb5a7684faa975f036.mp4" width="70" height="70" alt="𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹"/></a>
   
-`GURU-bhay Guru322`
+`𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹 𝑩𝑶𝑻`
 
