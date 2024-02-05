@@ -1,6 +1,6 @@
  <p align="center">  
   <a href="">
-    <img alt="PRINCE" width="600" height="350" src="https://i.imgur.com/iI086tX.jpeg">
+    <img alt="𝑪𝒀𝑩𝑬𝑹_𝑾𝑨𝑹𝑹𝑰𝑶𝑹 𝑩𝑶𝑻" width="600" height="350" src="https://i.imgur.com/ur24PoA.jpg">
   </a>
 </p>
 
