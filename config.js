@@ -20,8 +20,8 @@ global.owner = [
 
 
 //💌global.pairingNumber = "" //put your bot number here💌
-global.mods = ['923097045246'] 
-global.prems = ['923097045246']
+global.mods = ['923465125306'] 
+global.prems = ['923465125306']
 global.allowed = ['923097045246']
 global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
 global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
@@ -121,9 +121,18 @@ global.developer = 'https://wa.me/message/923097045246' //contact
 
 
 //Sticker WM
-global.botname = '*MANNO-BOT-MÐ*'
-global.princebot = '*🛡️𝘔𝘈𝘕𝘕𝘕𝘖-𝘉𝘖𝘛-𝘔𝘋🛡️*'
-global.packname = '𝘔𝘈𝘕𝘕𝘕𝘖-𝘉𝘖𝘛♥️' 
+global.botname = '*🎀🤍ᴍʀܔ𝙋𝙍𝙊𝙁𝙀𝙎𝙎𝙊𝙍『 ᴊᴇʀʀʏ』🍃 🌸
+
+
+  *'
+global.princebot = '*🛡️ 🎀🤍ᴍʀܔ𝙋𝙍𝙊𝙁𝙀𝙎𝙎𝙊𝙍『 ᴊᴇʀʀʏ』🍃 🌸
+
+
+  *'
+global.packname = '🎀🤍ᴍʀܔ𝙋𝙍𝙊𝙁𝙀𝙎𝙎𝙊𝙍『 ᴊᴇʀʀʏ』🍃 🌸
+
+
+' 
 global.author = '' 
 global.princeig = 'https://www.instagram.com' 
 global.princegp = 'https://chat.whatsapp.com/GWJkAJSgbv27sGOMLAzMDS'
